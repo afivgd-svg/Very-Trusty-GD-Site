@@ -5,10 +5,27 @@
     font-style: normal;
 }
 
-html, body {
+@font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/Helvetica.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.main-thing {
     font-family: 'Pusab', sans-serif;
     color: white;
      -webkit-text-stroke: 0.8px black;
+}
+
+.important-text {
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+    background-color: #800000;
+}
+
+body {
     background-color: #91CEA8;
 }
 
