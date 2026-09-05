@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Pusab';
+    src: url('assets/fonts/PUSAB.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Pusab', sans-serif;
+    color: white;
+     -webkit-text-stroke: 0.8px black;
+    background-color: #91CEA8;
+}
+
+.page-btn {
+    width: 200px;
+    height: 30px;
+    color: white;
+}

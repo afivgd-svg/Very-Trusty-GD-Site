@@ -1,0 +1,31 @@
+body {
+    background-color: #91CEA8;
+}
+
+@font-face {
+    font-family: 'Pusab';
+    src: url('../assets/fonts/PUSAB.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Pusab', sans-serif;
+    color: white;
+     -webkit-text-stroke: 0.8px black;
+}
+
+.gd-steam-img {
+    width: 900px;
+    height: 300px;
+}
+
+.back-to-home-button {
+    width: 200px;
+    height: 30px;
+    transform-origin: 100% 0%;
+}
+
+.mrdummy-guy {
+    font-size: 26px;
+}
