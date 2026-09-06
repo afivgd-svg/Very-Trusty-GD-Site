@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chumunity Silly List</title>
+        <link rel="icon" type="image/jpg" href="../assets/image/chumunity_silly_list.png">
+        <style>
+            @font-face {
+                font-family: 'Pusab';
+                src: url('../assets/fonts/PUSAB.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Helvetica';
+                src: url('../assets/fonts/Helvetica.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            
+            body {
+                background-image: url("../assets/image/gd_bg.png");
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: multiply; 
+                background-color: #287dff; 
+            }
+
+            .main-div {
+                font-family: 'Pusab', sans-serif;
+                color: white;
+                -webkit-text-stroke: 2px black;
+
+                background-color: #995533;
+                border-radius: 15px;
+                width: 800px;
+                height: 550px;
+                position: absolute;
+                top: 6%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+
+            .inside-div {
+                font-family: Helvetica, sans-serif;
+                color: white;
+                font-size: 20px;
+                -webkit-text-stroke: 0px;
+                background-color: #6c3c25;
+                border-radius: 15px;
+                position: absolute;
+                top: 70px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 750px;
+                height: 450px;
+            }
+
+            .div-title {
+                font-size: 40px;
+                width: 665px;
+                position: absolute;
+                top: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .p-rank {
+                position: absolute;
+                top: 0%;
+                left: 3%;
+                transform: translate(0%, 0%);
+            }
+
+            .bottom-p {
+                font-size: 15px;
+                position: absolute;
+                top: 100%;
+                left: 3%;
+                transform: translate(0%, -150%);
+            }
+        </style>
+
+        
+    </head>
+    <body>
+        <a href="../index.html"><img src="../assets/image/arrow_left.png" style="width: 50px;"></a>
+        <div class="main-div">
+            <p class="div-title">Silliest People In Chumunity<img style="width: 35px;" alt="Chu Icon" src="https://lh3.googleusercontent.com/sitesv/AG8ngQWqBLMErydy7IZuzavI_OVs2joG9NdV0E5xwUgWTdwzZCoyxJzRdDPl_nEor7FiBL21hUJyuatuvVPjKcOq8OswiNTeK4XeKCKq0JTJHfHvjtwFKblgF1VGsX6UxXYLiDj-ath83NU4TWJrqB3XH64GNFThRpEro5C63VlCmqNtyZFOrszYFT7fPyoS=w16383"></p>
+            <div class="inside-div">
+                <p id="p-rank" class="p-rank">Loading...</p>
+                <script>
+                    // W Gemini lowk. uh... ignore this comment i did NOT vibe coded this trust m-
+                    /*
+                    const url = '"https://gheomhetrys.ps.fhgdps.com/getCSL.php"';
+
+                    fetch(url, {
+                        method: 'GET'
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        const p = document.getElementById("p-rank");
+                        let html = "";
+                        for (const [rank, name] of Object.entries(data)) {
+                            html += `${rank}. ${name}<br>`;
+                        }
+                        p.innerHTML = html;
+                    })
+                    .catch(err => {
+                        console.error("it cant load those list rank son:", err)
+                        const p = document.getElementById("p-rank");
+                        p.innerHTML = "<cr>failed to load rankings<br>err: " + err;
+                        p.style.color = 'red';
+                    });
+
+                    fetch("https://gheomhetrys.ps.fhgdps.com/getGJLevels21.php", {
+                        method: 'POST'
+                    })
+                    .then(data => {
+                        console.log(data);
+                    })*/
+
+                    /*let listDict = {
+                        "1": "CrystalGD",
+                        "2": "Naikotunna",
+                        "3": "Golden (Goldie)",
+                        "4": "ExlvsGD",
+                        "5": "SomeoneGD",
+                        "6": "Chu",
+                        "7": "MrDummy",
+                        "8": "idk",
+                        "9": "AFiVGD (idk fuq)",
+                        "10": "Anyone Inbetween because i can't rank :/",
+                        "11": "Ryu (wtf is silly? so i just follow Raz request)"
+                    };
+                    
+                    updateList(listDict);*/
+
+                     // all those shit upthere, ARE USELESS. L GEMINI WASTING MY FUCKING TIME
+
+                    fetch("https://raw.githubusercontent.com/afivgd-svg/Very-Trusty-GD-Site/refs/heads/main/ranks.json").then(res => res.json()).then(data => {
+                        updateList(data);
+                    }).catch(err => {
+                        console.error("failed to load rankings:", err)
+                        const p = document.getElementById("p-rank");
+                        p.innerHTML = "<cr>failed to load rankings<br>err: " + err;
+                        p.style.color = 'red';
+                    });
+
+                    function updateList(dict) {
+                        const p = document.getElementById("p-rank");
+                        let html = "";
+                        for (const [rank, name] of Object.entries(dict)) {
+                            html += `${rank}. ${name}<br>`;
+                        }
+                        p.innerHTML = html;
+                    }
+                </script>
+                <p class="bottom-p">
+                    btw this is still WIP so.. if you're part of the Chumunity, tell me your ranking :3<br>
+                    Discord: @afivgdforsomereason
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

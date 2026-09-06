@@ -1,16 +1,15 @@
 @font-face {
     font-family: 'Pusab';
-    src: url('assets/fonts/PUSAB.otf') format('opentype');
+    src: url('../assets/fonts/PUSAB.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('assets/fonts/Helvetica.ttf') format('opentype');
+    src: url('../assets/fonts/Helvetica.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 
 .main-thing {
