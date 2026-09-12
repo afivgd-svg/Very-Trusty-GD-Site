@@ -7,7 +7,7 @@
     p.innerHTML = "cannot load list";
 });*/
 
-//let list = [];
+let list = [];
 
 fetch("https://gheomhetrys.ps.fhgdps.com/getCSL.php").then(res => res.json()).then(data => {
     updateList(data, true);
@@ -57,6 +57,10 @@ function createBox(rank, name, url, pfp) { // some DOM Manipulation stuff. it li
     const container = document.getElementById("list-container");
     //const btn = document.createElement("button");
     //btn.textContent = `#${rank} - ${name} - ${url}`;
+    let pfp2 = pfp;
+    if (pfp == "no yt pfp") {
+        pfp = "../assets/images/son.png"
+    }
     let nameColors = "white";
     let textShadowColors = "#000000";
     if (rank == '1') {
@@ -67,7 +71,7 @@ function createBox(rank, name, url, pfp) { // some DOM Manipulation stuff. it li
     const a = document.createElement("a");
     a.href = `${url}`;
     const divBox = document.createElement("div");
-    divBox.classList.add("list-boxes");
+    if (url != "no yt acc") divBox.classList.add("list-boxes");
     divBox.style = `gap: 20px; background: linear-gradient(#464646, #292929); border-radius: 20px; width: 100%; height: 100px; display: flex; align-items: center; box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.7);`;
     divBox.innerHTML = `<p style="text-shadow: 3px 3px 8px ${textShadowColors}; color: ${nameColors}; font-size: 30px; position: absolute; left: 15px;">#${rank} - ${name}</p>`;
     const pfpImage = document.createElement("img");
@@ -75,7 +79,12 @@ function createBox(rank, name, url, pfp) { // some DOM Manipulation stuff. it li
     pfpImage.alt = "pfp";
     pfpImage.style = "height: 100px; border-radius: 20px; position: absolute; left: 100%; transform: translate(-100%, 0%);"
 
-    container.appendChild(a);
-    a.appendChild(divBox);
+    if (url != "no yt acc") {
+        container.appendChild(a);
+        a.appendChild(divBox);
+    } else {
+        container.appendChild(divBox);
+    }
+
     divBox.appendChild(pfpImage);
 }
