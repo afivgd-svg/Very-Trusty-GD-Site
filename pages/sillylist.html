@@ -3,12 +3,34 @@
     <head>
         <title>Chumunity Silly List</title>
         <link rel="icon" type="image/jpg" href="../assets/image/chumunity_silly_list.png">
-        <script src="sillylist.js"></script>
+        <style>
+            html, body {
+                /*background-color: #1d1d1d;*/
+                background: linear-gradient(to bottom, #1d1d1d, #141414);
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                font-family:Arial, Helvetica, sans-serif;
+                color: white;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                /*text-size-adjust: 12px;*/
+                /*-webkit-text-stroke: 0.px black;*/
+            }
+
+            .list-boxes:hover {
+                filter: brightness(130%);
+                transition: filter 0.3s ease; /*uh... this shi lowk vibe coded. sowwy ;-;*/
+            }
+        </style>
     </head>
 
     <body>
-        <p style="position: absolute; left: 50%; transform: translate(-50%, 0%);">chumunity silly list</p>
-        <p><a href="../index.html">back</a><br></p>
+        <p style="font-size: 40px; position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%); text-shadow: 5px 5px 10px rgba(0,0,0,3);">CHUMUNITY SILLY LIST</p>
+        <p><a href="../index.html" style="color: white;">Back To Home :3</a><br></p>
         <p id="people-list"></p>
+        <div id="list-container" style="display: grid; gap: 20px; max-width: 900px; width: 100%; position: absolute; top: 100px; left: 50%; transform: translate(-50%, 0%);"></div>
+        <p id="footer-text" style="text-align: center; visibility: hidden; position: absolute; left: 50%; transform: translate(-50%, 0%);">Give me your thought on this list! :3 | Discord: @afivgdforsomereason</p>
+        <script src="sillylist_script.js"></script>
     </body>
 </html>
