@@ -6,10 +6,11 @@
         <style>
             html, body {
                 /*background-color: #1d1d1d;*/
-                background: linear-gradient(to bottom, #1d1d1d, #141414);
+                background: linear-gradient(to bottom, #00000000, #0000007d);
+                background-color: #1d1d1d;
                 background-attachment: fixed;
                 background-repeat: no-repeat;
-                font-family:Arial, Helvetica, sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
                 color: white;
                 height: 100%;
                 display: flex;
@@ -18,19 +19,65 @@
                 /*-webkit-text-stroke: 0.px black;*/
             }
 
+            :root {
+                --button-outline-color: #8f8f9d;
+            }
+
             .list-boxes:hover {
                 filter: brightness(130%);
                 transition: filter 0.3s ease; /*uh... this shi lowk vibe coded. sowwy ;-;*/
+            }
+
+            .help-btn {
+                color: white;
+                /*background-color: rgb(167, 167, 167);*/
+                background: linear-gradient(#363636, #1d1d1d);
+                font-size: 20px;
+                border-radius: 10px;
+                border: 2px solid var(--button-outline-color);
+                width: 30px;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                transform: translate(0%, 0%);
+                box-shadow: 0px 0px 10px rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+            .back-btn {
+                color: white;
+                font-size: 20px;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                /*background-color: rgb(167, 167, 167);*/
+                background: linear-gradient(#363636, #1d1d1d);
+                border-radius: 10px;
+                border: 2px solid var(--button-outline-color);
+                transform: translate(0%, 0%);
+                box-shadow: 0px 0px 10px rgb(0, 0, 0);
+                cursor: pointer;
+            }
+
+            .help-btn:hover {
+                filter: brightness(70%);
+                transition: filter 0.2s ease;
+            }
+
+            .back-btn:hover {
+                filter: brightness(70%);
+                transition: filter 0.2s ease;
             }
         </style>
     </head>
 
     <body>
         <p style="font-size: 40px; position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%); text-shadow: 5px 5px 10px rgba(0,0,0,3);">CHUMUNITY SILLY LIST</p>
-        <p><a href="../index.html" style="color: white;">Back To Home :3</a><br></p>
         <p id="people-list"></p>
         <div id="list-container" style="display: grid; gap: 20px; max-width: 900px; width: 100%; position: absolute; top: 100px; left: 50%; transform: translate(-50%, 0%);"></div>
         <p id="footer-text" style="text-align: center; visibility: hidden; position: absolute; left: 50%; transform: translate(-50%, 0%);">Give me your thought on this list! :3 | Discord: @afivgdforsomereason</p>
+        <button class="help-btn" onclick="alert('hi :3>\nbtw this button does nothing at the time sowwy :(');">i</button>
+        <a href="../index.html"><button class="back-btn">Back To Home</button></a>
         <script src="sillylist_script.js"></script>
     </body>
 </html>
