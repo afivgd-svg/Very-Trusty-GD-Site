@@ -44,7 +44,8 @@ function updateList(array, clear_text) {
     const container = document.getElementById("list-container");
     const footer = document.getElementById("footer-text");
     footer.style.visibility = "visible";
-    footer.style.top = `${100 + (+container.offsetHeight)}px`;
+    footer.style.top = `${110 + (+container.offsetHeight)}px`;
+    footer.style.height = "60px";
     //console.log(container.offsetHeight);
     //if (clear_text) p.innerHTML = html;
     //else p.innerHTML += html;
