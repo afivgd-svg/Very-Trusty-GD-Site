@@ -1,83 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <!-- dont know i can make comments in html. lowk fire. -->
+        <!-- plss dont judge me because of this TERRIBLE cowde. idk this looks terrible to me -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <title>Chumunity Silly List</title>
+
+        <meta name="description" content="Chumunity Silly List is a Website">
         <link rel="icon" type="image/jpg" href="../assets/image/chumunity_silly_list.png">
-        <style>
-            html, body {
-                /*background-color: #1d1d1d;*/
-                background: linear-gradient(to bottom, #00000000, #0000007d);
-                background-color: #1d1d1d;
-                background-attachment: fixed;
-                background-repeat: no-repeat;
-                font-family: Arial, Helvetica, sans-serif;
-                color: white;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                /*text-size-adjust: 12px;*/
-                /*-webkit-text-stroke: 0.px black;*/
-            }
-
-            :root {
-                --button-outline-color: #8f8f9d;
-            }
-
-            .list-boxes:hover {
-                filter: brightness(130%);
-                transition: filter 0.3s ease; /*uh... this shi lowk vibe coded. sowwy ;-;*/
-            }
-
-            .help-btn {
-                color: white;
-                /*background-color: rgb(167, 167, 167);*/
-                background: linear-gradient(#363636, #1d1d1d);
-                font-size: 20px;
-                border-radius: 10px;
-                border: 2px solid var(--button-outline-color);
-                width: 30px;
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                transform: translate(0%, 0%);
-                box-shadow: 0px 0px 10px rgb(0, 0, 0);
-                cursor: pointer;
-            }
-
-            .back-btn {
-                color: white;
-                font-size: 20px;
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                /*background-color: rgb(167, 167, 167);*/
-                background: linear-gradient(#363636, #1d1d1d);
-                border-radius: 10px;
-                border: 2px solid var(--button-outline-color);
-                transform: translate(0%, 0%);
-                box-shadow: 0px 0px 10px rgb(0, 0, 0);
-                cursor: pointer;
-            }
-
-            .help-btn:hover {
-                filter: brightness(70%);
-                transition: filter 0.2s ease;
-            }
-
-            .back-btn:hover {
-                filter: brightness(70%);
-                transition: filter 0.2s ease;
-            }
-        </style>
+        <link rel="stylesheet" href="../styles/sillylist_style.css">
     </head>
 
     <body>
-        <p style="font-size: 40px; position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%); text-shadow: 5px 5px 10px rgba(0,0,0,3);">CHUMUNITY SILLY LIST</p>
+        <p style="-webkit-text-stroke: 1px #8f8f9d; font-size: 40px; position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%); text-shadow: 5px 5px 10px rgba(0,0,0,3);">CHUMUNITY SILLY LIST</p>
         <p id="people-list"></p>
         <div id="list-container" style="display: grid; gap: 20px; max-width: 900px; width: 100%; position: absolute; top: 100px; left: 50%; transform: translate(-50%, 0%);"></div>
         <p id="footer-text" style="text-align: center; visibility: hidden; position: absolute; left: 50%; transform: translate(-50%, 0%);">Give me your thought on this list! :3 | Discord: @afivgdforsomereason<br>This list is based on YOUR opinion because i can't rank :/</p>
-        <button class="help-btn" onclick="alert('hi :3>\nbtw this button does nothing at the time sowwy :(');">i</button>
+        <button class="help-btn" onclick="alert('hi :3\nbtw this button does nothing at the time sowwy :(');">i</button>
         <a href="../index.html"><button class="back-btn">Back To Home</button></a>
+        <!--<div class="overlay">
+            <div class="mediaSocialPopup" id="mediaSocialPopup">
+                <button class="close-btn" id="close-btn">X</button>
+            </div>
+        </div>-->
         <script src="sillylist_script.js"></script>
     </body>
 </html>

@@ -6,9 +6,10 @@
 }
 
 .main-thing {
-    font-family: 'Pusab', sans-serif;
+    font-family: 'Pusab', Arial;
     color: white;
-     -webkit-text-stroke: 0.8px black;
+    -webkit-text-stroke: 0.2vh black;
+    text-shadow: 0.375vh 0.375vh 0vh rgba(0, 0, 0, 0.3);
 }
 
 .important-text {

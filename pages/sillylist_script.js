@@ -38,7 +38,7 @@ function updateList(array, clear_text) {
     for (let i = 0; i < array.length; i++) {
        //html += `#${i + 1} - <a href="${array[i][1]}">${array[i][0]}</a><br>`;
        let idk = array[i];
-       createBox(i + 1, idk[0], idk[1], idk[2]);
+       createBox(i + 1, idk[0], idk[1], idk[2], idk[3], idk[4]);
     }
 
     const container = document.getElementById("list-container");
@@ -54,7 +54,7 @@ function updateList(array, clear_text) {
 
 //createBox("10", "RobTop", "https://www.google.com");
 
-function createBox(rank, name, url, pfp) { // some DOM Manipulation stuff. it literally add a box and it says. :3
+function createBox(rank, name, url, pfp, desc, gd) { // some DOM Manipulation stuff. it literally add a box and it says. :3
     const container = document.getElementById("list-container");
     //const btn = document.createElement("button");
     //btn.textContent = `#${rank} - ${name} - ${url}`;
@@ -69,23 +69,76 @@ function createBox(rank, name, url, pfp) { // some DOM Manipulation stuff. it li
         textShadowColors = "#ff8800"
     }
 
-    const a = document.createElement("a");
-    a.href = `${url}`;
+    /*const a = document.createElement("a");
+    a.href = `${url}`;*/
     const divBox = document.createElement("div");
     if (url != "no yt acc") divBox.classList.add("list-boxes");
-    divBox.style = `gap: 20px; background: linear-gradient(#464646, #292929); border-radius: 20px; width: 100%; height: 100px; display: flex; align-items: center; box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.7);`;
-    divBox.innerHTML = `<p style="text-shadow: 3px 3px 8px ${textShadowColors}; color: ${nameColors}; font-size: 30px; position: absolute; left: 15px;">#${rank} - ${name}</p>`;
+    divBox.innerHTML = `<p style="text-shadow: 3px 3px 8px ${textShadowColors}; color: ${nameColors}; font-size: 30px; position: absolute; left: 15px;">#${rank} - ${name}</p>`
+    divBox.onclick = `spawnBalls("${desc}", "${gd}")`;
     const pfpImage = document.createElement("img");
     pfpImage.src = pfp;
     pfpImage.alt = "pfp";
     pfpImage.style = "height: 100px; border-radius: 20px; position: absolute; left: 100%; transform: translate(-100%, 0%);"
-
-    if (url != "no yt acc") {
+    divBox.addEventListener('click', () => {
+        spawnBalls(rank, name, url, pfp, desc, gd);
+    });
+    /*if (url != "no yt acc") {
         container.appendChild(a);
         a.appendChild(divBox);
     } else {
         container.appendChild(divBox);
-    }
+    }*/
+   container.appendChild(divBox);
 
     divBox.appendChild(pfpImage);
 }
+
+function spawnBalls(rank, name, url, pfp, desc, gd) {
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    const popup = document.createElement("div");
+    popup.classList.add("mediaSocialPopup");
+    const close = document.createElement("div");
+    close.classList.add("close-btn");
+    close.innerHTML = "X";
+    close.addEventListener('click', () => {
+        removeBalls(overlay);
+    })
+    const upPIdk = document.createElement("p");
+    upPIdk.innerHTML = `#${rank} - ${name}`;
+    upPIdk.style = `font-size: 30px; text-align: center; text-shadow: 0px 0px 20px rgb(0, 0, 0); position: absolute; left: 50%; top: 10px; transform: translate(-50%, -50%); display: flex; justify-items: center; align-items: center;`;
+
+    const description = document.createElement("p");
+    description.innerHTML = desc;
+    description.style = `position: absolute; left: 50%; bottom: 10px; transform: translate(-50%, -50%); width: 600px; text-align: center;`;
+
+    if (url != "no yt acc") {
+        const ytA = document.createElement("a");
+        ytA.href = url;
+        const ytBtn = document.createElement("div");
+        ytBtn.classList.add("ytBtn");
+        popup.appendChild(ytA);
+        ytA.appendChild(ytBtn);
+    }
+
+    if (gd != "no gd acc") {
+        const gdA = document.createElement("a");
+        gdA.href = gd;
+        const gdBtn = document.createElement("div");
+        gdBtn.classList.add("gdBtn");
+        popup.appendChild(gdA);
+        gdA.appendChild(gdBtn);
+    }
+    
+    document.body.appendChild(overlay);
+    overlay.appendChild(popup);
+    popup.appendChild(close);
+    popup.appendChild(upPIdk);
+    popup.appendChild(description);
+}
+
+function removeBalls(overlay) {
+    document.body.removeChild(overlay);
+}
+
+//<button class="close-btn" id="close-btn">X</button>
