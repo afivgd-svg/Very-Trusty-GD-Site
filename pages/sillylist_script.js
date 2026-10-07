@@ -119,6 +119,12 @@ function spawnBalls(rank, name, url, pfp, desc, gd) {
         ytBtn.classList.add("ytBtn");
         popup.appendChild(ytA);
         ytA.appendChild(ytBtn);
+
+        const ytPfp = document.createElement("img");
+        ytPfp.src = pfp;
+        ytPfp.alt = "PFP";
+        ytPfp.style = `width: 55px; height: 55px; border-radius: 55px; top: 15px; right: 10px; transform: translate(0%, 0%); position: absolute; box-shadow: 2px 2px 5px black; outline: 5px black; outline-color: black; outline-style: none; outline-width: 5px;`;
+        popup.appendChild(ytPfp);
     }
 
     if (gd != "no gd acc") {
